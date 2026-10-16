@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pogotowie Sprawdzianowe — Budowa komórki DEMO</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#15324b;background:#e9f6fc}*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(145deg,#e6f7fd,#f8fcff)}
+header{background:#fff;border-bottom:5px solid #e54b55;padding:18px 22px;display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap}
+.mark{background:#e54b55;color:#fff;border-radius:14px;padding:10px 14px;font-weight:900;font-size:22px}
+h1{font-size:clamp(23px,4vw,38px);margin:0;color:#133a64}header p{margin:2px 0;color:#49657c}
+main{max-width:1050px;margin:24px auto;padding:0 16px 32px}
+nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:20px}
+nav button{font:inherit;padding:13px 6px;border:2px solid #bdd7e8;background:white;color:#395369;border-radius:14px;font-weight:750;cursor:pointer}
+nav button.active{background:#1569a6;color:white;border-color:#1569a6}
+nav button.locked{background:#f0f3f6;color:#697e8c}
+.panel{background:white;border-radius:22px;padding:clamp(15px,3vw,28px);box-shadow:0 12px 35px #255c7b19}
+h2{margin:0 0 10px;font-size:25px}.intro{color:#4b647a;margin:0 0 18px}
+.layout{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:center}
+svg{width:100%;height:auto;display:block;background:#f2faff;border-radius:20px}
+.organ{cursor:pointer;outline:none}.organ:hover{filter:drop-shadow(0 0 6px #f5a623)}.organ:focus-visible{filter:drop-shadow(0 0 6px #e94c55)}
+button.action{background:#146ba5;border:0;color:#fff;border-radius:12px;padding:12px 18px;font:inherit;font-weight:800;cursor:pointer}
+button.action.secondary{background:#e9f2f9;color:#165c89}
+#feedback{background:#eff7fb;border-left:5px solid #2698c8;border-radius:10px;padding:14px;min-height:75px}
+.answers{display:grid;gap:10px;margin:16px 0}.answers button{background:#fff;border:2px solid #b5d5e6;padding:13px;border-radius:12px;text-align:left;font:inherit;font-weight:650;cursor:pointer}.answers button:hover{border-color:#1577ae}
+.status{font-weight:800;color:#12699c}.tag{display:inline-block;background:#fbe5e7;color:#a12734;border-radius:99px;padding:5px 12px;font-weight:800;font-size:13px;margin-bottom:8px}
+footer{text-align:center;color:#4c6c81;padding:12px;font-size:13px}
+@media(max-width:720px){nav{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}header{text-align:center}}
+</style></head>
+<body><header><div class="mark">✚ CHEMIA GADA</div><div><h1>POGOTOWIE SPRAWDZIANOWE</h1><p>Biologia • Budowa komórki • Wersja DEMO</p></div></header>
+<main><nav aria-label="Zakładki">
+<button class="locked" data-locked="Komórka bakterii">🔒 Bakteria</button>
+<button class="active" id="animalTab">🐾 Komórka zwierzęca</button>
+<button class="locked" data-locked="Komórka roślinna">🔒 Roślinna</button>
+<button class="locked" data-locked="Quiz">🔒 Quiz</button>
+</nav>
+<section class="panel">
+<span class="tag">DEMO • 2 organelle</span><h2>Komórka zwierzęca</h2>
+<p class="intro">Poznaj <strong>jądro komórkowe</strong> i <strong>mitochondrium</strong>. Kliknij organellum na modelu, aby sprawdzić jego funkcję, a potem rozwiąż dwa zadania.</p>
+<div class="layout"><svg viewBox="0 0 530 430" role="img" aria-label="Schemat komórki zwierzęcej. Klikalne jądro komórkowe pośrodku i mitochondrium z prawej strony.">
+<defs><radialGradient id="cyto"><stop stop-color="#f9e8fa"/><stop offset="1" stop-color="#b9e6f7"/></radialGradient></defs>
+<path d="M76 138 Q107 47 254 58 Q421 37 468 169 Q503 310 379 370 Q230 428 108 344 Q24 280 76 138Z" fill="url(#cyto)" stroke="#237ea8" stroke-width="9"/>
+<path d="M105 135Q129 106 166 123M404 320Q433 298 443 270" fill="none" stroke="#8fc7de" stroke-width="7" stroke-linecap="round"/>
+<g opacity=".45" fill="#efad68"><circle cx="165" cy="286" r="8"/><circle cx="390" cy="123" r="7"/><circle cx="126" cy="214" r="5"/><circle cx="357" cy="301" r="6"/></g>
+<g id="nucleus" class="organ" tabindex="0" role="button" aria-label="Jądro komórkowe">
+<ellipse cx="247" cy="211" rx="91" ry="86" fill="#c5a4e9" stroke="#7751b0" stroke-width="7"/>
+<ellipse cx="247" cy="211" rx="69" ry="63" fill="#e2cafa" stroke="#9973c5" stroke-width="2"/>
+<circle cx="264" cy="221" r="29" fill="#9063c0"/><path d="M198 186q15 -16 32 -6M203 248q13 11 25 4" stroke="#a77dcf" stroke-width="7" fill="none" stroke-linecap="round"/>
+</g>
+<g id="mito" class="organ" tabindex="0" role="button" aria-label="Mitochondrium" transform="rotate(-22 370 243)">
+<ellipse cx="375" cy="238" rx="64" ry="37" fill="#ffb46b" stroke="#cb5b3c" stroke-width="6"/>
+<path d="M326 238q13 -27 24 0t25 0t24 0t23 0" fill="none" stroke="#b9503b" stroke-width="7" stroke-linecap="round"/>
+</g>
+<text x="265" y="407" text-anchor="middle" font-size="16" fill="#567388">Uproszczony model komórki zwierzęcej</text>
+</svg>
+<div><h3 id="infoTitle">Wybierz organellum</h3><p id="feedback" aria-live="polite">Kliknij fioletowe jądro lub pomarańczowe mitochondrium.</p>
+<button class="action" id="start">Sprawdź swoją wiedzę →</button>
+<div id="exercise" hidden><p class="status" id="progress"></p><h3 id="question"></h3><div class="answers" id="answers"></div><p id="result" aria-live="polite"></p><button class="action secondary" id="restart" hidden>Spróbuj ponownie</button></div>
+</div></div>
+</section><footer>Wersja demonstracyjna • Pełna aplikacja: komórka bakterii, zwierzęca, roślinna i quiz.</footer></main>
+<script>
+const feedback=document.getElementById('feedback'),title=document.getElementById('infoTitle');
+const organelles={
+nucleus:{name:'Jądro komórkowe',info:'Zawiera większość DNA komórki i kieruje jej czynnościami.'},
+mito:{name:'Mitochondrium',info:'Jest miejscem oddychania komórkowego, podczas którego powstaje większość ATP w komórce.'}
+};
+for(const [id,obj] of Object.entries(organelles)){
+ const el=document.getElementById(id);
+ const show=()=>{title.textContent=obj.name;feedback.textContent=obj.info;};
+ el.addEventListener('click',show);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
+}
+document.querySelectorAll('[data-locked]').forEach(b=>b.addEventListener('click',()=>alert(b.dataset.locked+' — dostępne w pełnej wersji Pogotowia Sprawdzianowego.')));
+document.getElementById('animalTab').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const questions=[
+{q:'Które organellum zawiera większość materiału genetycznego komórki zwierzęcej?',options:['Mitochondrium','Jądro komórkowe'],correct:1,why:'Jądro komórkowe zawiera większość DNA komórki.'},
+{q:'W którym organellum zachodzi oddychanie komórkowe prowadzące do wytwarzania większości ATP?',options:['Jądro komórkowe','Mitochondrium'],correct:1,why:'Mitochondria są głównym miejscem wytwarzania ATP w oddychaniu tlenowym.'}
+];
+let index=0,score=0;
+const exercise=document.getElementById('exercise'),start=document.getElementById('start'),answers=document.getElementById('answers'),result=document.getElementById('result'),restart=document.getElementById('restart');
+function render(){
+ if(index===questions.length){
+  document.getElementById('progress').textContent='Koniec ćwiczenia';
+  document.getElementById('question').textContent='Twój wynik: '+score+' / '+questions.length;
+  answers.replaceChildren();result.textContent='To koniec wersji DEMO. Pozostałe organelle i typy komórek poznasz w pełnej wersji.';restart.hidden=false;return;
+ }
+ const item=questions[index];document.getElementById('progress').textContent='Pytanie '+(index+1)+' z '+questions.length;document.getElementById('question').textContent=item.q;
+ answers.replaceChildren();result.textContent='';
+ item.options.forEach((text,i)=>{const b=document.createElement('button');b.textContent=text;b.addEventListener('click',()=>{
+  if(i===item.correct)score++;
+  result.textContent=(i===item.correct?'Dobrze! ':'Jeszcze nie. ')+item.why;
+  [...answers.children].forEach(x=>x.disabled=true);
+  const next=document.createElement('button');next.className='action';next.textContent=index===questions.length-1?'Zobacz wynik':'Następne pytanie →';next.addEventListener('click',()=>{index++;render();});answers.append(next);
+ });answers.append(b);});
+}
+start.addEventListener('click',()=>{start.hidden=true;exercise.hidden=false;index=0;score=0;render();});
+restart.addEventListener('click',()=>{index=0;score=0;restart.hidden=true;render();});
+</script></body></html>

@@ -1,9 +1,11 @@
-# Pogotowie Sprawdzianowe — Budowa komórki (DEMO)
+# Pogotowie Sprawdzianowe – Budowa komórki (DEMO)
 
-Interaktywne laboratorium biologiczne Chemia Gada. DEMO obejmuje szczegółowe karty jądra komórkowego i mitochondrium, cztery typy ćwiczeń (po 2 zadania) oraz quiz z 5 pytaniami. Model komórki pokazuje także pozostałe struktury, ale ich karty są zablokowane.
+Pliki do umieszczenia w katalogu głównym repozytorium GitHub Pages:
+- `index.html` – interaktywna aplikacja z ćwiczeniami i quizem
+- `komorka_3d.webp` – wybrana wizualizacja komórki zwierzęcej
 
-## Publikacja na GitHub Pages
+Wgraj **oba pliki**, a następnie wykonaj Commit changes. Nie zmieniaj nazw.
 
-Prześlij pliki `index.html` i `README.md` do głównego katalogu repozytorium. W `Settings → Pages` ustaw `Deploy from a branch`, gałąź `main`, folder `/ (root)`. Strona nie wymaga dodatkowych plików ani zewnętrznych bibliotek.
+Aktywne w DEMO: jądro komórkowe, mitochondrium, 4 tryby ćwiczeń i quiz 5 pytań. Pozostałe organelle i typy komórek są zablokowane.
 
-**Uwaga:** To model dydaktyczny — proporcje i kolory struktur są umowne.
+Wizualizacja ma charakter artystyczno-dydaktyczny, a nie mikrofotografii ani modelu w skali.
